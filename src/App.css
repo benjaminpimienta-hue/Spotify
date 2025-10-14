@@ -1,0 +1,371 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.data {
+  width: 290px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid lightgray;
+}
+.data img {
+  width: 100px;
+  height: 100px;
+  margin: 50px 0px 0px 0px;
+}
+.data p{
+  margin: 10px 0px 0px 0px;
+}
+.out {
+  background-color: red;
+  color: #fff;
+  margin: 20px 0px 0px 0px;
+  width: 130px;
+  height: 30px;
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif, Bold;
+}
+.in {
+  background-color: blue;
+  color: #fff; 
+  width: 180px;
+  height: 50px;
+  font-size: 16px; 
+  font-family: Georgia, 'Times New Roman', Times, serif, Bold;
+}
+.cc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 20px;  
+}
+.card {
+  width: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  padding: 10px;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.search {
+  text-Align: 'center';
+  margin: '20px';
+}
+.cards-container p, h3 {
+  margin: 5px 0px 3px 0px;
+}
+.cards-container h3 {
+  margin: 5px 0px 10px 0px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Barra lateral izquierda */
+.izquierda {
+  width: 250px;
+  padding: 20px;
+  background-color: transparent;  
+  margin: -20px 0px 0px -15px;
+}
+
+.izquierda div {
+  margin-bottom: 15px;
+  background-color: #181818;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.izquierda button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.barra {
+  width: 98%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin: -24px 0px 10px 0px;
+}
+.barra > .inicio img {
+  width: 25px;
+  height: 25px;
+  border-radius: 0px;
+  margin: 6px 5px 5px 5px;  
+  cursor: pointer;
+}
+.barra > .inicio img:hover {
+  width: 30px;
+  height: 30px;
+  border-radius: 0px;
+  margin: 6px 5px 5px 5px;  
+  cursor: pointer;
+}
+.barra > .inicio:hover {
+  width: 45px;
+  height: 45px;
+  border: 1.5px solid #fff;
+  margin: 0px -10px 0px 0px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.barra .inicio {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #fff;
+  margin: 0px -10px 0px 0px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.barra >.log img {
+  width: 35px;
+  height: 35px;
+  margin: 2.5px -70px 0px 35px;
+}
+
+.barra input {
+  width: 400px;
+  height: 41px;
+  border-radius: 20px;
+  border: none;
+  margin: 0px 0px 0px -100px;
+  color: gray;
+  background-color: #181818;
+  font-size: 20px;
+  text-align: center;
+}
+
+.barra .premiun {
+  background-color: #fff;
+  color: black;
+  border: none;
+  height: 33px;
+  width: 180px;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.barra .instalar {
+  background-color: transparent;
+  color: gray;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.buscar img {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+.buscar {
+  width: 42px;
+  width: 42px;
+  border-radius: 30px;
+  background-color: transparent;
+  position: relative;
+  margin: 0px 0px 0px -165px;
+  border: none;
+}
+
+.center {
+  width: 650px;
+  background-color: #181818;
+  margin: 0px 0px 0px -5px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+}
+
+.center .mostrar{
+  background-color: transparent;
+  border: 2.5px solid #fff;
+  cursor: pointer;
+  margin: -100px 0px 0px 80px;
+}
+.center .mostrar:hover{
+  background-color: transparent;
+  border: 2.5px solid #fff;
+  cursor: pointer;
+  margin: -100px 0px 0px 100px;
+}
+
+/* Álbumes */
+.albumes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 155px;
+  height: 300px;
+  margin: 20px 0px -30px 0px;
+}
+
+.albumes img {
+  width: 140px;
+  height: 140px;
+  border-radius: 6px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.albumes div {
+  background-color: #181818;
+  padding: 10px;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+}
+
+.albumes p {
+  width: 140px;
+  margin: 10px 0px 0px 20px;
+}
+
+/* Imagen lateral derecha */
+.derecha {
+  width: 320px;
+  height: 500px;
+  background-color: #181818;
+  padding: 10px;
+  border-radius: 8px;  
+  margin: 0px 0px 0px 15px;
+}
+.reproductor img{
+  width: 250px;
+  border-Radius: 10px; 
+  margin-top: 10px;
+}
+
+/* Reproductor inferior */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 98%;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+  opacity: 90%;
+}
+footer .pie{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.pie img {
+  border-radius: 8px;
+}
+.pie p{
+  margin: 0px;
+  font-size: 1px;
+  opacity: 1px;
+}
+
+.star {
+  width: 428px;
+  height: 926px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+}
+.start img {
+  width: 428px;
+  height: 485px;
+  margin: 0px 0px 0px 0px;
+}
+.logo img {
+  width: 55px;
+  height: 55px;
+  margin: -10px 0px 0px 0px;
+}
+.sign {
+  background-color: #1ED760;
+  width: 337px;
+  height: 50px;
+  border-radius: 45px;
+  border: none;
+  font-size: 16px;
+  margin: 10px;
+}
+.google {
+  background-color: transparent;
+  width: 337px;
+  height: 50px;
+  border-radius: 45px;
+  border: 1px solid #fff;
+  font-size: 16px;
+  margin: 10px;
+  color: #fff;
+}
+.google img {
+  width: 20px;
+  height: 20px;
+  margin: 5px 60px 0px -70px;
+}
+.textlogo {
+  font-size: 28px;
+  margin: 30px 0px 40px 0px;
+}
+.inicio img {
+  border-radius: 35px;
+  width: 60px;
+  height: 60px;
+  margin: 23px -80px 0px 0px;
+}
+.log img {
+  border-radius: 35px;
+  width: 50px;
+  height: 50px;
+  margin:23px -70px 0px 0px;
+}
+.biblioteca {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.biblioteca h2 {
+  font-size: 18px;
+  margin: 22px 30px 20px 20px;
+}
+.biblioteca button {
+  background-color: transparent;
+  color: gray;
+  font-size: 22px;
+}
