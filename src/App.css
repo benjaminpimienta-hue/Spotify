@@ -4,39 +4,19 @@
   padding: 2rem;
   text-align: center;
 }
-.data {
-  width: 290px;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border: 1px solid lightgray;
-}
-.data img {
-  width: 100px;
-  height: 100px;
-  margin: 50px 0px 0px 0px;
-}
-.data p{
-  margin: 10px 0px 0px 0px;
-}
 .out {
-  background-color: red;
+  background-color: #1ED760;
   color: #fff;
-  margin: 20px 0px 0px 0px;
-  width: 130px;
-  height: 30px;
-  font-size: 16px;
-  font-family: Georgia, 'Times New Roman', Times, serif, Bold;
+  margin: 0px 0px 0px 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
-.in {
-  background-color: blue;
-  color: #fff; 
-  width: 180px;
-  height: 50px;
-  font-size: 16px; 
-  font-family: Georgia, 'Times New Roman', Times, serif, Bold;
+.out img {
+  width: 20px;
+  height: 20px;
 }
 .cc {
   display: flex;
@@ -87,17 +67,17 @@ body {
   width: 250px;
   padding: 20px;
   background-color: transparent;  
-  margin: -20px 0px 0px -15px;
+  margin: -43px 0px 0px -15px;
 }
 
-.izquierda div {
+.izquierda .list {
   margin-bottom: 15px;
   background-color: #181818;
   padding: 15px;
   border-radius: 8px;
 }
 
-.izquierda button {
+.izquierda > .list button {
   background-color: #fff;
   color: #000;
   border: none;
@@ -111,58 +91,75 @@ body {
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 30px;
-  margin: -24px 0px 10px 0px;
+  margin: -10px 0px 10px 0px;
 }
-.barra > .inicio img {
+.barra .iconos {
+  display: flex;
+  flex-direction: row;
+  margin: -45px 20px 0px 35px;
+}
+.barra > .iconos .inicio img {
   width: 25px;
   height: 25px;
   border-radius: 0px;
   margin: 6px 5px 5px 5px;  
   cursor: pointer;
 }
-.barra > .inicio img:hover {
+.barra > .iconos .inicio img:hover {
   width: 30px;
   height: 30px;
   border-radius: 0px;
-  margin: 6px 5px 5px 5px;  
   cursor: pointer;
 }
-.barra > .inicio:hover {
+.barra > .iconos .inicio:hover {
   width: 45px;
   height: 45px;
-  border: 1.5px solid #fff;
-  margin: 0px -10px 0px 0px;
+  border: 2px solid #fff;
   border-radius: 40px;
   cursor: pointer;
 }
-.barra .inicio {
+.barra > .iconos .inicio {
   width: 40px;
   height: 40px;
-  border: 1.5px solid #fff;
-  margin: 0px -10px 0px 0px;
+  border: 2px solid #fff;
+  margin: 0px 0px 0px 30px;
   border-radius: 40px;
   cursor: pointer;
 }
-.barra >.log img {
+.barra > .iconos .log img {
   width: 35px;
   height: 35px;
-  margin: 2.5px -70px 0px 35px;
+  margin: 4px 0px 0px 0px;
+  cursor: pointer;
 }
-
+.barra > .iconos .log img:hover {
+  width: 42px;
+  height: 42px;
+  margin: 2px 0px 0px 0px;
+  cursor: pointer;
+}
+.barra .busqueda {
+  display: flex;
+  flex-direction: row;
+  margin: -45px 150px 0px 0px;
+}
 .barra input {
   width: 400px;
   height: 41px;
   border-radius: 20px;
   border: none;
-  margin: 0px 0px 0px -100px;
   color: gray;
   background-color: #181818;
   font-size: 20px;
   text-align: center;
 }
-
+.barra .botonesbarra {
+  display: flex;
+  flex-direction: row;
+  margin: -45px 0px 0px -30px;
+}
 .barra .premiun {
   background-color: #fff;
   color: black;
@@ -170,22 +167,45 @@ body {
   height: 33px;
   width: 180px;
   border-radius: 20px;
-  margin-left: 10px;
   cursor: pointer;
 }
-
+.barra .premiun:hover {
+  background-color: lightgray;
+  color: black;
+  border: none;
+  height: 37px;
+  width: 190px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  
+}
 .barra .instalar {
   background-color: transparent;
   color: gray;
   border: none;
   padding: 8px 12px;
   border-radius: 20px;
-  margin-left: 10px;
+  margin: 0px 0px 0px 30px;
   cursor: pointer;
 }
+.barra .instalar:hover {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
 .buscar img {
-  width: 38px;
-  height: 38px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.buscar img:hover {
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
 .buscar {
@@ -194,17 +214,18 @@ body {
   border-radius: 30px;
   background-color: transparent;
   position: relative;
-  margin: 0px 0px 0px -165px;
+  margin: 2px 0px 0px -48px;
   border: none;
 }
 
 .center {
   width: 650px;
   background-color: #181818;
-  margin: 0px 0px 0px -5px;
+  margin: -23px 0px 0px -5px;
   flex-wrap: wrap;
   display: flex;
   align-items: center;
+  border-radius: 7px;
 }
 
 .center .mostrar{
@@ -212,12 +233,14 @@ body {
   border: 2.5px solid #fff;
   cursor: pointer;
   margin: -100px 0px 0px 80px;
+  opacity: 15%;
 }
 .center .mostrar:hover{
   background-color: transparent;
   border: 2.5px solid #fff;
   cursor: pointer;
   margin: -100px 0px 0px 100px;
+  opacity: 100%;
 }
 
 /* Álbumes */
@@ -229,8 +252,18 @@ body {
   width: 155px;
   height: 300px;
   margin: 20px 0px -30px 0px;
+  opacity: 50%;
 }
-
+.albumes:hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 155px;
+  height: 300px;
+  margin: 20px 0px -30px 0px;
+  opacity: 100%;
+}
 .albumes img {
   width: 140px;
   height: 140px;
@@ -259,7 +292,7 @@ body {
   background-color: #181818;
   padding: 10px;
   border-radius: 8px;  
-  margin: 0px 0px 0px 15px;
+  margin: -23px 0px 0px 15px;
 }
 .reproductor img{
   width: 250px;
@@ -296,7 +329,11 @@ footer .pie{
   font-size: 1px;
   opacity: 1px;
 }
-
+.starloguin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .star {
   width: 428px;
   height: 926px;
@@ -323,6 +360,7 @@ footer .pie{
   border: none;
   font-size: 16px;
   margin: 10px;
+  cursor: pointer;
 }
 .google {
   background-color: transparent;
@@ -333,6 +371,7 @@ footer .pie{
   font-size: 16px;
   margin: 10px;
   color: #fff;
+  cursor: pointer;
 }
 .google img {
   width: 20px;
@@ -359,6 +398,9 @@ footer .pie{
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 .biblioteca h2 {
   font-size: 18px;
@@ -368,4 +410,151 @@ footer .pie{
   background-color: transparent;
   color: gray;
   font-size: 22px;
+}
+.user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: -28px 0px 0px 0px;
+}
+
+/* 📱 Responsive para pantallas menores a 900px */
+@media (max-width: 900px) {
+
+  .buscar img{
+    width: 50%;
+    height: 70%;
+    margin-left: 0px;
+  }
+  .buscar {
+    width: 10%;
+    height: 70%;
+    margin-left: 0px;
+  }
+
+  .barra input{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+  }
+  .barra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .premiun,
+  .instalar,
+  .barra .log,
+  .barra .inicio {
+    display: none;
+  }
+  .cuerpo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .biblioteca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .izquierda {
+    width: 80%;
+    margin: 0;
+    padding: 10px;
+    order: -1; /* se mueve arriba del centro */
+  }
+  .izquierda .list{
+    display: none;
+  }
+
+  .center {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .derecha {
+    display: none;
+  }
+}
+
+/* 📱 Responsive para pantallas menores a 600px */
+@media (max-width: 600px) {
+  .barra input {
+    width: 70%;
+    font-size: 14px;
+  }
+  .buscar img{
+    width: 80%;
+    height: 80%;
+    margin-left: 0px;
+  }
+  .buscar {
+    width: 10%;
+    height: 70%;
+    margin-left: 0px;
+  }
+
+  .barra input{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+  }
+  .barra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .premiun,
+  .instalar,
+  .barra .log,
+  .barra .inicio {
+    display: none;
+  }
+
+  .center {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .albumes {
+    width: 70%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .albumes img {
+    width: 70%;
+    height: auto;
+  }
+  .albumes:hover {
+    width: 80%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .albumes img:hover {
+    width: 80%;
+    height: auto;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  footer .pie {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .user h3 {
+    display: none;
+  }
 }

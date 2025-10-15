@@ -46,16 +46,22 @@ export default function Api() {
   return (
     <>
       <div className="barra">
+
+      <div className="iconos">
         <div className="log"><img src="./img/logo.png" alt="" /></div>
         <div className="inicio"><img src="./img/h.png" alt="" /></div>
+      </div>
 
+      <div className="busqueda">
         <input value={busqueda} placeholder="Escribe una canción..." 
           onChange={(e) => setBusqueda(e.target.value)}/>
-
         <button className="buscar" onClick={() => setQuery(busqueda)}> <img src="./img/lupa.png" alt="" /> </button>
+      </div>       
+
+      <div className="botonesbarra">
         <button className="premiun"><b>Descubrir Premium</b></button>
         <BotonSpotify></BotonSpotify>
-        <span>👤</span>
+      </div>
       </div>
 
       <div className="cuerpo">
@@ -66,12 +72,8 @@ export default function Api() {
         <div className="center">
           {cancionesParaMostrar.map((track) => (
             <div className="albumes" key={track.trackId}>
-              <img
-                src={track.artworkUrl100}
-                alt={track.trackName}
-                onClick={() => reproducirPreview(track)}
-                style={{ cursor: "pointer" }}
-              />
+              <img src={track.artworkUrl100} alt={track.trackName} onClick={() => reproducirPreview(track)}/>
+
               <p><strong>{track.trackName}</strong></p>
               <p>{track.artistName}</p>
             </div>

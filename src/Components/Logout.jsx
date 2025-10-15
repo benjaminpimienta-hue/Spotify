@@ -15,7 +15,7 @@ function Logout() {
   return (
     <>
     <button className='out' onClick={handleLogout}>
-      <b>Cerrar sesión</b>
+      <img src="./img/salida.png" alt="" />
     </button>
   </>
   )

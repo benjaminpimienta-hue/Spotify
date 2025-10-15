@@ -1,23 +1,39 @@
-import { Route, Routes, Link } from 'react-router-dom'
-import Home from './Pages/Home'
-import Api from './Pages/Api'
-import './App.css'
-import Start from './Pages/Start'
+import React, { useEffect, useState } from "react";
+import { supabase } from "./supabaseClient";
+import Login from "./Components/Login";
+import Logout from "./Components/Logout";
+import Api from "./Pages/Api"; 
 
-function App() {
+export default function App() {
+  const [session, setSession] = useState(null);
 
-    return (
-        <>
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+    return () => subscription.subscription.unsubscribe();
+  }, []);
 
-
+  return (
+    <div>
+      {session ? (
         <div>
-        <Routes>
-            <Route path="/" element={<Api/>} />
-            <Route path="/Start" element={<Start />} /> 
-        </Routes>
-        </div>
-        </>
-    )
-}
+          <div className="user">
+            <h3>{session.user.user_metadata.full_name}</h3>
+            <img src={session.user.user_metadata.avatar_url} alt="👤" width={40} style={{ borderRadius: "50%" }}/>
+            <Logout/>
+          </div>
+          
+          <Api />
+        </div>) 
+        : (
+        
+        <Login />
+      )}
+    </div>
+  );
 
-export default App
+}

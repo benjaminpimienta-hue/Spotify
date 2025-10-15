@@ -8,12 +8,12 @@ function Izquierda() {
     <h2>Tu biblioteca </h2>
     <button>+</button>
     </div> 
-    <div>
+    <div className='list'>
       <h4>Crea tu primera lista</h4>
       <p>Es muy fácil, y te echaremos una mano.</p>
       <button>Crear lista</button>
     </div>
-    <div>
+    <div className='list'>
       <h4>Encuentra pódcasts que quieras seguir</h4>
       <p>Te avisaremos cuando salgan nuevos episodios</p>
       <button>Explorar pódcasts</button>
