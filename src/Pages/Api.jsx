@@ -47,41 +47,49 @@ export default function Api() {
     <>
       <div className="barra">
 
-      <div className="iconos">
-        <div className="log"><img src="./img/logo.png" alt="" /></div>
-        <div className="inicio"><img src="./img/h.png" alt="" /></div>
-      </div>
+        <div className="iconos">
+          <div className="log"><img src="/logo.png" alt="logo" /></div>
+          <div className="inicio"><img src="/h.png" alt="inicio" /></div>
+        </div>
 
-      <div className="busqueda">
-        <input value={busqueda} placeholder="Escribe una canción..." 
-          onChange={(e) => setBusqueda(e.target.value)}/>
-        <button className="buscar" onClick={() => setQuery(busqueda)}> <img src="./img/lupa.png" alt="" /> </button>
-      </div>       
+        <div className="busqueda">
+          <input
+            value={busqueda}
+            placeholder="Escribe una canción..."
+            onChange={(e) => setBusqueda(e.target.value)}
+          />
+          <button className="buscar" onClick={() => setQuery(busqueda)}>
+            <img src="/lupa.png" alt="buscar" />
+          </button>
+        </div>
 
-      <div className="botonesbarra">
-        <button className="premiun"><b>Descubrir Premium</b></button>
-        <BotonSpotify></BotonSpotify>
-      </div>
+        <div className="botonesbarra">
+          <button className="premiun"><b>Descubrir Premium</b></button>
+          <BotonSpotify />
+        </div>
       </div>
 
       <div className="cuerpo">
         {/* Izquierda */}
-        <Izquierda></Izquierda>
+        <Izquierda />
 
         {/* Centro */}
         <div className="center">
           {cancionesParaMostrar.map((track) => (
             <div className="albumes" key={track.trackId}>
-              <img src={track.artworkUrl100} alt={track.trackName} onClick={() => reproducirPreview(track)}/>
-
+              <img
+                src={track.artworkUrl100}
+                alt={track.trackName}
+                onClick={() => reproducirPreview(track)}
+              />
               <p><strong>{track.trackName}</strong></p>
               <p>{track.artistName}</p>
             </div>
           ))}
 
           {resultados.length > 5 && !mostrarTodos && (
-            <button className="mostrar" onClick={() => setMostrarTodos(true)}> 
-            <img src="./img/flecha.png" alt="" /> 
+            <button className="mostrar" onClick={() => setMostrarTodos(true)}>
+              <img src="/flecha.png" alt="mostrar más" />
             </button>
           )}
         </div>
@@ -90,7 +98,7 @@ export default function Api() {
         <div className="derecha">
           {trackActual && (
             <div className="reproductor">
-              <img src={trackActual.artworkUrl100} alt={trackActual.trackName}/>
+              <img src={trackActual.artworkUrl100} alt={trackActual.trackName} />
               <h4>{trackActual.trackName}</h4>
               <p>{trackActual.artistName}</p>
               <button onClick={togglePlayPause}>
@@ -103,9 +111,9 @@ export default function Api() {
 
       {/* Footer */}
       {trackActual && (
-        <footer> 
+        <footer>
           <div className="pie">
-            <img src={trackActual.artworkUrl60} alt={trackActual.trackName}/>
+            <img src={trackActual.artworkUrl60} alt={trackActual.trackName} />
             <div>
               <strong>{trackActual.trackName}</strong>
               <p>{trackActual.artistName}</p>
