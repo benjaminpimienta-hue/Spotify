@@ -11,7 +11,6 @@ export default function Api() {
   const [mensaje, setMensaje] = useState("");
   const audioRef = useRef(null);
 
-  // 🔍 Buscar canciones (función sencilla)
   function buscarCanciones() {
     if (busqueda.trim() === "") {
       setResultados([]);
@@ -38,14 +37,12 @@ export default function Api() {
       });
   }
 
-  // ⏎ Buscar cuando se presione Enter
   function handleKeyPress(e) {
     if (e.key === "Enter") {
       buscarCanciones();
     }
   }
 
-  // 🎵 Reproducir canción
   function reproducirPreview(track) {
     setTrackActual(track);
     if (audioRef.current) {
@@ -55,7 +52,6 @@ export default function Api() {
     }
   }
 
-  // ⏯️ Pausar o continuar
   function togglePlayPause() {
     if (!audioRef.current) return;
     if (audioRef.current.paused) {
@@ -76,7 +72,8 @@ export default function Api() {
         </div>
 
         <div className="busqueda">
-          <input type="text" placeholder="Escribe una canción..." value={busqueda} onChange={(e) => setBusqueda(e.target.value)} onKeyDown={handleKeyPress}/>
+          <input type="text" placeholder="Escribe una canción..." value={busqueda} 
+          onChange={(e) => setBusqueda(e.target.value)} onKeyDown={handleKeyPress}/>
           <button className="buscar" onClick={buscarCanciones}>
             <img src="/lupa.png" alt="buscar" />
           </button>
@@ -92,10 +89,8 @@ export default function Api() {
         <Izquierda />
 
         <div className="center">
-          {/* 🟡 Mensaje (buscando / no encontrado / error) */}
           {mensaje && <p className="mensaje">{mensaje}</p>}
 
-          {/* 🎶 Resultados */}
           {resultados.map((track) => (
             <div className="albumes" key={track.trackId}>
               <img

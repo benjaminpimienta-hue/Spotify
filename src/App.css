@@ -486,6 +486,20 @@ footer .pie{
   .derecha {
     display: none;
   }
+  .center .mostrar{
+  background-color: transparent;
+  border: 2.5px solid #fff;
+  cursor: pointer;
+  margin: -200px 0px 0px 100px;
+  opacity: 15%;
+}
+.center .mostrar:hover{
+  background-color: transparent;
+  border: 2.5px solid #fff;
+  cursor: pointer;
+  margin: -200px 0px 0px 100px;
+  opacity: 100%;
+}
 }
 
 /* 📱 Responsive para pantallas menores a 600px */
