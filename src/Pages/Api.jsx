@@ -1,36 +1,62 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "../App.css";
 import BotonSpotify from "../Components/BotonSpotify";
 import Izquierda from "../Components/Izquierda";
 
 export default function Api() {
   const [busqueda, setBusqueda] = useState("");
-  const [query, setQuery] = useState("");
   const [resultados, setResultados] = useState([]);
-  const [mostrarTodos, setMostrarTodos] = useState(false);
   const [trackActual, setTrackActual] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [mensaje, setMensaje] = useState("");
   const audioRef = useRef(null);
 
-  useEffect(() => {
-    if (query === "") return;
+  // 🔍 Buscar canciones (función sencilla)
+  function buscarCanciones() {
+    if (busqueda.trim() === "") {
+      setResultados([]);
+      setMensaje("");
+      return;
+    }
 
-    fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=musicTrack&limit=20`)
+    setMensaje("Buscando...");
+
+    fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(busqueda)}&entity=musicTrack&limit=20`)
       .then((res) => res.json())
-      .then((data) => setResultados(data.results || []))
-      .catch((err) => console.error(err));
-  }, [query]);
+      .then((data) => {
+        if (data.results.length > 0) {
+          setResultados(data.results);
+          setMensaje("");
+        } else {
+          setResultados([]);
+          setMensaje("Información no encontrada");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setMensaje("Error al buscar información");
+      });
+  }
 
-  const reproducirPreview = (track) => {
+  // ⏎ Buscar cuando se presione Enter
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      buscarCanciones();
+    }
+  }
+
+  // 🎵 Reproducir canción
+  function reproducirPreview(track) {
     setTrackActual(track);
     if (audioRef.current) {
       audioRef.current.src = track.previewUrl;
       audioRef.current.play();
       setIsPlaying(true);
     }
-  };
+  }
 
-  const togglePlayPause = () => {
+  // ⏯️ Pausar o continuar
+  function togglePlayPause() {
     if (!audioRef.current) return;
     if (audioRef.current.paused) {
       audioRef.current.play();
@@ -39,26 +65,19 @@ export default function Api() {
       audioRef.current.pause();
       setIsPlaying(false);
     }
-  };
-
-  const cancionesParaMostrar = mostrarTodos ? resultados : resultados.slice(0, 9);
+  }
 
   return (
     <>
       <div className="barra">
-
         <div className="iconos">
           <div className="log"><img src="/logo.png" alt="logo" /></div>
           <div className="inicio"><img src="/h.png" alt="inicio" /></div>
         </div>
 
         <div className="busqueda">
-          <input
-            value={busqueda}
-            placeholder="Escribe una canción..."
-            onChange={(e) => setBusqueda(e.target.value)}
-          />
-          <button className="buscar" onClick={() => setQuery(busqueda)}>
+          <input type="text" placeholder="Escribe una canción..." value={busqueda} onChange={(e) => setBusqueda(e.target.value)} onKeyDown={handleKeyPress}/>
+          <button className="buscar" onClick={buscarCanciones}>
             <img src="/lupa.png" alt="buscar" />
           </button>
         </div>
@@ -70,12 +89,14 @@ export default function Api() {
       </div>
 
       <div className="cuerpo">
-        {/* Izquierda */}
         <Izquierda />
 
-        {/* Centro */}
         <div className="center">
-          {cancionesParaMostrar.map((track) => (
+          {/* 🟡 Mensaje (buscando / no encontrado / error) */}
+          {mensaje && <p className="mensaje">{mensaje}</p>}
+
+          {/* 🎶 Resultados */}
+          {resultados.map((track) => (
             <div className="albumes" key={track.trackId}>
               <img
                 src={track.artworkUrl100}
@@ -86,15 +107,8 @@ export default function Api() {
               <p>{track.artistName}</p>
             </div>
           ))}
-
-          {resultados.length > 5 && !mostrarTodos && (
-            <button className="mostrar" onClick={() => setMostrarTodos(true)}>
-              <img src="/flecha.png" alt="mostrar más" />
-            </button>
-          )}
         </div>
 
-        {/* Derecha */}
         <div className="derecha">
           {trackActual && (
             <div className="reproductor">
@@ -109,7 +123,6 @@ export default function Api() {
         </div>
       </div>
 
-      {/* Footer */}
       {trackActual && (
         <footer>
           <div className="pie">
