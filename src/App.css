@@ -511,11 +511,11 @@ footer .pie{
 
 /* 📱 Responsive para pantallas menores a 600px */
 @media (max-width: 600px) {
-  .mensaje {
+.mensaje {
   text-align: center;
   font-weight: bold;
   color: #1db954;
-  margin-top: 20px;
+  margin: 0px 0px 0px 0px;
 }
   .barra input {
     width: 70%;
