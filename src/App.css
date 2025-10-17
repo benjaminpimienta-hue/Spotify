@@ -460,9 +460,13 @@ footer .pie{
     align-items: center;
   }
   
+  .barra .log {
+    width: 70%;
+    height: 70%;
+  }
+  
   .premiun,
   .instalar,
-  .barra .log,
   .barra .inicio {
     display: none;
   }
