@@ -93,7 +93,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 30px;
-  margin: -10px 0px 10px 0px;
+  margin:-15px 0px 10px 0px;
 }
 .barra .iconos {
   display: flex;
@@ -164,7 +164,7 @@ body {
   text-align: center;
   font-weight: bold;
   color: #1db954;
-  margin: -150px 0px 0px 220px;
+  margin:-150px 0 20px 220px
 }
 .barra .premiun {
   background-color: #fff;
@@ -422,7 +422,7 @@ footer .pie{
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  margin: -28px 0px 0px 0px;
+  margin: -20px 0px 0px 0px;
 }
 
 /* 📱 Responsive para pantallas menores a 900px */
