@@ -89,15 +89,12 @@ export default function Api() {
         <Izquierda />
 
         <div className="center">
-          {mensaje && <p className="mensaje">{mensaje}</p>}
 
           {resultados.map((track) => (
             <div className="albumes" key={track.trackId}>
-              <img
-                src={track.artworkUrl100}
-                alt={track.trackName}
-                onClick={() => reproducirPreview(track)}
-              />
+              {mensaje && <p className="mensaje">{mensaje}</p>}
+              <imgsrc={track.artworkUrl100}alt={track.trackName}
+                onClick={() => reproducirPreview(track)}/>
               <p><strong>{track.trackName}</strong></p>
               <p>{track.artistName}</p>
             </div>
